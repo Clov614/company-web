@@ -26,3 +26,5 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 神秘人入伙了
+
+## 神秘人2号入伙了

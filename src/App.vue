@@ -1,26 +1,35 @@
 <template>
   <div id="app">
-    <the-head></the-head>
-    <el-container>
-      <el-header>Header</el-header>
+    <div v-if="tempStatus">
+      <the-head></the-head>
       <el-container>
-        <el-aside width="200px">Aside</el-aside>
+        <el-header>Header</el-header>
         <el-container>
-          <el-main>Main</el-main>
+          <el-aside width="200px">Aside</el-aside>
+          <el-container>
+            <el-main>Main</el-main>
+          </el-container>
         </el-container>
+        <el-footer>Footer</el-footer>
       </el-container>
-      <el-footer>Footer</el-footer>
-    </el-container>
+    </div>
+    <BgManagePage></BgManagePage>
   </div>
 </template>
 
 <script>
 import TheHead from './components/TheHead/index.vue'
-
+import BgManagePage from './views/BgManagePage.vue';
 export default {
   name: 'App',
+  data() {
+    return {
+      tempStatus: false, // 一个临时的状态
+    }
+  },
   components: {
-    TheHead
+    TheHead,
+    BgManagePage,
   }
 }
 </script>

@@ -23,13 +23,13 @@
             </div>
             <div class="info">
               <el-descriptions>
-                <el-descriptions-item label="用户名">桐生战狼</el-descriptions-item>
-                <el-descriptions-item label="手机号">1145141919810</el-descriptions-item>
-                <el-descriptions-item label="居住地">下北泽</el-descriptions-item>
+                <el-descriptions-item label="ctmer">桐生战狼</el-descriptions-item>
+                <el-descriptions-item label="id">1145141919810</el-descriptions-item>
+                <el-descriptions-item label="address">下北泽</el-descriptions-item>
                 <el-descriptions-item label="备注">
-                  <el-tag size="small">学校</el-tag>
+                  <el-tag size="small">A级通缉令</el-tag>
                 </el-descriptions-item>
-                <el-descriptions-item label="联系地址">下北泽114号</el-descriptions-item>
+                <el-descriptions-item label="">下北泽114号</el-descriptions-item>
               </el-descriptions>
             </div>
           </el-main>

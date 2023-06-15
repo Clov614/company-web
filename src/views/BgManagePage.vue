@@ -154,6 +154,7 @@ body>.el-container {
 .el-main {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     /* 设置侧轴右对齐 */
 }
 

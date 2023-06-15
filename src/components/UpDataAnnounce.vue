@@ -52,20 +52,6 @@ export default {
 </script>
 
 <style>
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
-.page-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 .form-container {
     width: 500px;
     padding: 40px;

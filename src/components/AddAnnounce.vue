@@ -41,14 +41,18 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start;
+    height: 600px;
 }
 
 .page-title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 26px;
+    /* margin-bottom: 5px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    line-height: 20px;
 }
 
 .form-container {

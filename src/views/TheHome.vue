@@ -13,7 +13,8 @@
                 </div>
                 <el-container>
                     <el-main>
-                        <div class="lunbo">
+                        <div class="main">
+                            <div class="lunbo">
                             <el-carousel indicator-position="outside">
                                 <el-carousel-item v-for="item in 4" :key="item">
                                     <h3>{{ item }}</h3>
@@ -30,6 +31,7 @@
                                 </el-descriptions-item>
                                 <el-descriptions-item label="">下北泽114号</el-descriptions-item>
                             </el-descriptions>
+                        </div>
                         </div>
                     </el-main>
                 </el-container>

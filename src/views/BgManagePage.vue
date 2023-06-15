@@ -94,7 +94,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* element-ui布局容器样式 */
 .el-header {
     display: flex;

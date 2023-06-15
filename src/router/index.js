@@ -7,6 +7,7 @@ import BgManagePage from '@/views/BgManagePage.vue'
 import AddAnnounce from '@/components/AddAnnounce.vue'
 import UpDataAnnounce from '@/components/UpDataAnnounce.vue'
 import AnnoList from '@/components/AnnoList.vue'
+import TheLogin from '@/components/TheLogin'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,11 @@ const routes = [
         path: '/home',
         name: 'TheHome',
         component: TheHome
+    },
+    {
+        path: '/login',
+        name: 'TheLogin',
+        component: TheLogin
     },
     {
         path: '/manager',

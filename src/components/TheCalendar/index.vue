@@ -6,6 +6,7 @@
 
 <script>
 export default {
+    name:'TheCalendar',
     data() {
     return {
         value: new Date()

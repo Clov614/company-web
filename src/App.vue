@@ -5,8 +5,8 @@
     <!-- <div id="bg-manage-page" v-if="tempStatus">
       <BgManagePage></BgManagePage>
     </div> -->
-    <router-link to='/home'>首页</router-link> &nbsp;
-    <router-link to='/manager'>后台</router-link> &nbsp;
+    <!-- <router-link to='/home'>首页</router-link> &nbsp;
+    <router-link to='/manager'>后台</router-link> &nbsp; -->
 
     <router-view></router-view>
   </div>

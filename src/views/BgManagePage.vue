@@ -33,7 +33,11 @@
                         </el-menu>
                     </el-col>
                 </el-row>
-                <el-col class="main-layout" style="position: static;width: 80%;">这里是页面</el-col>
+                <!-- 右边具体功能页面 -->
+                <el-col class="main-layout" style="position: static;width: 80%;">
+                    <!-- 这里是页面 使用router进行插入 -->
+                    <router-view></router-view>
+                </el-col>
             </el-main>
             <el-footer>
                 <div class="fter">

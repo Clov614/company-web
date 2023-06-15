@@ -15,23 +15,42 @@
                     <el-main>
                         <div class="main">
                             <div class="lunbo">
-                            <el-carousel indicator-position="outside">
-                                <el-carousel-item v-for="item in 4" :key="item">
-                                    <h3>{{ item }}</h3>
-                                </el-carousel-item>
-                            </el-carousel>
-                        </div>
-                        <div class="info">
-                            <el-descriptions>
-                                <el-descriptions-item label="ctmer">桐生战狼</el-descriptions-item>
-                                <el-descriptions-item label="id">1145141919810</el-descriptions-item>
-                                <el-descriptions-item label="address">下北泽</el-descriptions-item>
-                                <el-descriptions-item label="备注">
-                                    <el-tag size="small">A级通缉令</el-tag>
-                                </el-descriptions-item>
-                                <el-descriptions-item label="">下北泽114号</el-descriptions-item>
-                            </el-descriptions>
-                        </div>
+                                <template>
+                                    <el-carousel :interval="5000" arrow="always">
+                                        <el-carousel-item v-for="item in 4" :key="item">
+                                            <h3>{{ item }}</h3>
+                                        </el-carousel-item>
+                                    </el-carousel>
+                                </template>
+                            </div>
+                            <div class="hinfo" style="margin-top: -110px;">
+                                <h2>文章列表</h2>
+                            </div>
+                            <div class="info" style="margin-top: -80px;">
+                                <!-- <el-descriptions>
+                                    <el-descriptions-item label="ctmer">桐生战狼</el-descriptions-item>
+                                    <el-descriptions-item label="id">1145141919810</el-descriptions-item>
+                                    <el-descriptions-item label="address">下北泽</el-descriptions-item>
+                                    <el-descriptions-item label="备注">
+                                        <el-tag size="small">A级通缉令</el-tag>
+                                    </el-descriptions-item>
+                                    <el-descriptions-item label="">下北泽114号</el-descriptions-item>
+                                </el-descriptions> -->
+                                <el-table :data="tableData" style="width: 100%" height="350">
+                                    <el-table-column fixed prop="date" label="日期" width="150" height="50">
+                                    </el-table-column>
+                                    <el-table-column prop="name" label="姓名" width="120" height="50">
+                                    </el-table-column>
+                                    <el-table-column prop="province" label="省份" width="120" height="50">
+                                    </el-table-column>
+                                    <el-table-column prop="city" label="市区" width="120" height="50">
+                                    </el-table-column>
+                                    <el-table-column prop="address" label="地址" width="300" height="50">
+                                    </el-table-column>
+                                    <el-table-column prop="zip" label="邮编" width="120" height="50">
+                                    </el-table-column>
+                                </el-table>
+                            </div>
                         </div>
                     </el-main>
                 </el-container>
@@ -57,6 +76,56 @@ export default {
     data() {
         return {
             tempStatus: false, // 一个临时的状态
+            tableData: [{
+          date: '2016-05-03',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-08',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-06',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }, {
+          date: '2016-05-07',
+          name: '王小虎',
+          province: '上海',
+          city: '普陀区',
+          address: '上海市普陀区金沙江路 1518 弄',
+          zip: 200333
+        }]
         }
     },
     components: {},
@@ -105,6 +174,7 @@ export default {
 
 .info {
     width: 1000px;
+    height: 150px;
 
 }
 

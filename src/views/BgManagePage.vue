@@ -74,10 +74,10 @@ export default {
                     // router.push()
                     break;
                 case 2:
-                    router.push('/manager/addAnno');
+                    router.push('/manager/addAnno').catch(error => error);
                     break;
                 case 3:
-                    router.push('/manager/updataAnno');
+                    router.push('/manager/updataAnno').catch(error => error);
                     break;
             
                 default:

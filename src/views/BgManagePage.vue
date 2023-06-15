@@ -1,7 +1,6 @@
 <!-- 后台管理页面 -->
 <template>
     <div>
-        <the-head></the-head>
         <el-container>
             <el-header>
                 <h1>后台管理</h1>
@@ -36,14 +35,17 @@
                 </el-row>
                 <el-col class="main-layout" style="position: static;width: 80%;">这里是页面</el-col>
             </el-main>
-            <el-footer>Footer</el-footer>
+            <el-footer>
+                <div class="fter">
+                    <p>COPY RIGHT @A604 PRODUCTION</p>
+                </div>
+            </el-footer>
         </el-container>
     </div>
 </template>
 
 
 <script>
-import TheHead from '@/components/TheHead/index.vue'
 
 export default {
     name: "BgManagePage",
@@ -64,7 +66,6 @@ export default {
         },
     },
     components: {
-        TheHead,
     },
     watch: {
         
@@ -83,8 +84,6 @@ export default {
 }
 
 .el-footer {
-    background-color: #B3C0D1;
-    color: #333;
     text-align: center;
     line-height: 60px;
 }
@@ -120,7 +119,7 @@ body>.el-container {
 .tac {
     /* 举例 */
     height: 600px;
-    position: absolute;
+    position: static;
     bottom: 0;
     /* 放至底部 */
     z-index: 0;
@@ -134,7 +133,6 @@ body>.el-container {
 .el-main {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     /* 设置侧轴右对齐 */
 }
 

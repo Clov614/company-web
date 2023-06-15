@@ -1,10 +1,10 @@
 <template> 
-  <el-form ref="form" :model="form" label-width="80px" class="login-form">
+  <el-form ref="form" :model="sign_form" label-width="80px" class="login-form">
     <el-form-item label="用户名"> 
-      <el-input v-model="form.username"></el-input> 
+      <el-input v-model="sign_form.username"></el-input> 
     </el-form-item>
     <el-form-item label="密码"> 
-      <el-input type="password" v-model="form.password"></el-input>
+      <el-input type="password" v-model="sign_form.password"></el-input>
     </el-form-item>
     <el-form-item> 
   <el-button type="primary" @click="onSubmit">登录</el-button> 
@@ -14,19 +14,28 @@
 </template>
 
 <script>
+
+
+// 导入request (axios)
+import request from '@/api/request.js';
 export default {
   name: "TheLogin",
   data() {
     return {
-      form: {
+      sign_form: {
         username: '',
         password: ''
-      }
+      },
+      // auth 回调凭证
+      auth: '',
+      // 状态
+      status: 0,
     }
   },
   methods: {
-    onSubmit() {
-      axios.post('', this.form)//写入url
+    async onSubmit() {
+      //写入url
+      await request.post('/login_sign')
         .then(res => {
           console.log(res.data);
         })
@@ -34,8 +43,9 @@ export default {
           console.log(err);
         })
     },
-    onRegister() {
-      axios.post('', this.form)//写入url
+    async onRegister() {
+      //写入url
+      await request.post('/regist_sign')
         .then(res => {
           console.log(res.data);
         })

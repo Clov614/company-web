@@ -9,7 +9,7 @@ import axios from 'axios'
 // 挂载一个自定义属性$http
 Vue.prototype.$http = axios
 // 全局配置axios请求根路径(axios.默认配置.请求根路径)
-axios.defaults.baseURL = 'http://localhost:9000' // 后端地址(使用springMVC开发REST API后端)
+axios.defaults.baseURL = 'http://localhost:9000' // 后端地址(使用springMVC开发REST API)
 
 Vue.use(ElementUI)
 

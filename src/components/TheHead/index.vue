@@ -1,3 +1,11 @@
+<!--
+ * @Author: ink 2421665373@qq.com
+ * @Date: 2023-06-15 18:08:25
+ * @LastEditors: ink 2421665373@qq.com
+ * @LastEditTime: 2023-06-15 22:05:51
+ * @FilePath: \company-web\src\components\TheHead\index.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div id="head">
     <div class="line"></div>
@@ -18,7 +26,7 @@
         </el-submenu>
         <el-menu-item index="3"><router-link to='/manager'>后台</router-link></el-menu-item>
         <el-menu-item index="4"><a href="https://www.bilibili.com/video/BV1DL411q7sH/" target="_blank">重点关注</a></el-menu-item>
-        <!-- 你小子夹带私货@xpx -->
+        <el-menu-item index="3"><router-link to='/news'>新闻</router-link></el-menu-item>
         <el-menu-item index="3" style="margin-left: 1000px;"><router-link to='/login'>登录</router-link></el-menu-item>
     </el-menu>
 

@@ -1,63 +1,17 @@
 <template>
   <div id="app">
-    <div id="home" v-if="tempStatus">
-      <the-head></the-head>
-      <el-container>
-        <el-button type="text" @click="open">点击查看最新公告</el-button>
-        <el-container>
-          <div class="cebian">
-            <el-steps direction="vertical" :active="2">
-              <el-step title="第一步" description="公司第一阶段战略"></el-step>
-              <el-step title="第二步" description="公司第二阶段战略"></el-step>
-              <el-step title="第三步" description="关注鬼头明里喵关注鬼头明里谢谢喵"></el-step>
-              <el-step title="第四步" description="关注鬼头明里喵关注鬼头明里谢谢喵"></el-step>
-            </el-steps>
-          </div>
-          <el-container>
-            <el-main>
-              <div class="lunbo">
-                <el-carousel indicator-position="outside">
-                  <el-carousel-item v-for="item in 4" :key="item">
-                    <h3>{{ item }}</h3>
-                  </el-carousel-item>
-                </el-carousel>
-              </div>
-              <div class="info">
-                <el-descriptions>
-                  <el-descriptions-item label="ctmer">桐生战狼</el-descriptions-item>
-                  <el-descriptions-item label="id">1145141919810</el-descriptions-item>
-                  <el-descriptions-item label="address">下北泽</el-descriptions-item>
-                  <el-descriptions-item label="备注">
-                    <el-tag size="small">A级通缉令</el-tag>
-                  </el-descriptions-item>
-                  <el-descriptions-item label="">下北泽114号</el-descriptions-item>
-                </el-descriptions>
-              </div>
-            </el-main>
-          </el-container>
-          <template>
-            Drop anything you want here senpai
-
-          </template>
-        </el-container>
-
-
-        <el-footer>
-          <div class="fter">
-            <p>COPY RIGHT @A604 PRODUCTION</p>
-          </div>
-        </el-footer>
-      </el-container>
-    </div>
-    <div id="bg-manage-page">
+    <the-head></the-head>
+    <!-- 后台页面，暂时隐藏 -->
+    <!-- <div id="bg-manage-page" v-if="tempStatus">
       <BgManagePage></BgManagePage>
-    </div>
+    </div> -->
+    <router-link to='/home'>首页</router-link> &nbsp;
+    <router-link to='/manage'>后台</router-link> &nbsp;
   </div>
 </template>
 
 <script>
 import TheHead from './components/TheHead/index.vue'
-import BgManagePage from './views/BgManagePage.vue';
 export default {
   name: 'App',
   data() {
@@ -67,7 +21,6 @@ export default {
   },
   components: {
     TheHead,
-    BgManagePage,
   },
   methods: {
     open() {

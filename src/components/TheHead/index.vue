@@ -18,7 +18,12 @@
         </el-submenu>
         <el-menu-item index="3"><router-link to='/manager'>后台</router-link></el-menu-item>
         <el-menu-item index="4"><a href="https://www.bilibili.com/video/BV1rN411P74B" target="_blank">重点关注</a></el-menu-item>
+        
+        
+        
+        <el-menu-item index="3" style="margin-left: 1000px;"><router-link to='/login'>登录</router-link></el-menu-item>
     </el-menu>
+
   </div>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
-<div class="news">
-          <el-carousel :interval="5000" arrow="always">
-            <el-carousel-item v-for="item in 4" :key="item">
-              <h3>{{ item }}</h3>
-            </el-carousel-item>
-          </el-carousel>
-          <el-collapse v-model="activeNames" @change="handleChange">
+  <div class="news">
+    <el-carousel :interval="5000" arrow="always">
+      <el-carousel-item v-for="item in 4" :key="item">
+        <h3>{{ item }}</h3>
+      </el-carousel-item>
+    </el-carousel>
+    <el-collapse v-model="activeNames" @change="handleChange">
       <el-collapse-item title="一致性 Consistency" name="1">
         <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
         <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
@@ -24,37 +24,37 @@
         <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>
       </el-collapse-item>
     </el-collapse>
-</div>
+  </div>
 </template>
 <script>
 export default {
-    name: "NewsModule",
-     data() {
-        return {
-            activeNames: ['1']
-        };
-    },
-    methods: {
-        handleChange(val) {
-            console.log(val);
-        }
+  name: "NewsModule",
+  data() {
+    return {
+      activeNames: ['1']
+    };
+  },
+  methods: {
+    handleChange(val) {
+      console.log(val);
     }
+  }
 };
 </script>
-<style lang="less" scoped>
+<style scoped>
 .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
-    margin: 0;
-  }
-  
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
+  color: #475669;
+  font-size: 18px;
+  opacity: 0.75;
+  line-height: 300px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
+}
 </style>

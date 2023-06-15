@@ -71,7 +71,7 @@ export default {
             const router = this.$router;
             switch (index) {
                 case 1:
-                    // router.push()
+                    router.push('/manager/annoList').catch(error => error);
                     break;
                 case 2:
                     router.push('/manager/addAnno').catch(error => error);
@@ -79,7 +79,7 @@ export default {
                 case 3:
                     router.push('/manager/updataAnno').catch(error => error);
                     break;
-            
+    
                 default:
                     break;
             }

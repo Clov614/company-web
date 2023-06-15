@@ -1,3 +1,4 @@
+<!-- 修改公告组件 后台中使用 -->
 <template>
     <div class="container">
         <h1 class="page-title">修改公告</h1>
@@ -17,6 +18,7 @@
 
 <script>
 export default {
+    name: 'UpDataAnnounce',
     data() {
         return {
             form: {

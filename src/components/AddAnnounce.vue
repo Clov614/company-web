@@ -1,3 +1,4 @@
+<!-- 添加公告组件 后台中使用 -->
 <template>
     <div class="container">
         <h1 class="page-title">添加公告</h1>
@@ -17,6 +18,7 @@
 
 <script>
 export default {
+    name: 'AddAnnounce',
     data() {
         return {
             form: {

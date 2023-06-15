@@ -6,6 +6,7 @@ import TheHome from '@/views/TheHome.vue'
 import BgManagePage from '@/views/BgManagePage.vue'
 import AddAnnounce from '@/components/AddAnnounce.vue'
 import UpDataAnnounce from '@/components/UpDataAnnounce.vue'
+import AnnoList from '@/components/AnnoList.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
             path: 'updataAnno',
             name: 'UpDataAnnounce',
             component: UpDataAnnounce
+        },
+        {
+            path:'annoList',
+            name:'AnnoList',
+            component:AnnoList
         },
         ]
     }

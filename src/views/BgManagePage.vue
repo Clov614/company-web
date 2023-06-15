@@ -65,8 +65,25 @@ export default {
         handleClose(key, keyPath) {
             console.log(key, keyPath);
         },
+        // 公告侧栏点击事件
         listenClick(index) {
-            console.log(index);
+            // 路由对象
+            const router = this.$router;
+            switch (index) {
+                case 1:
+                    // router.push()
+                    break;
+                case 2:
+                    router.push('/manager/addAnno');
+                    break;
+                case 3:
+                    router.push('/manager/updataAnno');
+                    break;
+            
+                default:
+                    break;
+            }
+
         },
     },
     components: {

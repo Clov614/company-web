@@ -8,7 +8,7 @@
         <el-menu-item index="3"><a href="/home">重点关注</a></el-menu-item>
         <el-menu-item index="5" style="float: right;"><router-link to='/login'>登录</router-link></el-menu-item>
         <el-menu-item index="4" style="float: right;"><router-link to='/manager'>后台</router-link></el-menu-item>
-        
+        <el-menu-item index="6" style="float: right;"><router-link to='/message'>留言板</router-link></el-menu-item>
     </el-menu>
 
   </div>

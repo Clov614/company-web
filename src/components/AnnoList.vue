@@ -1,9 +1,9 @@
 <template>
 <div class="notice-list">
     <h1 class="page-title">公告列表</h1>
-    <el-table :data="notices" height="500" border style="width: 100% ">
-        <el-table-column prop="title" label="标题" width="240"></el-table-column>
-        <el-table-column prop="content" label="公告内容"  width="800"></el-table-column>
+    <el-table :data="notices" height="500" border style="width: 100%">
+        <el-table-column prop="title" label="标题" style="width: 20px;"></el-table-column>
+        <el-table-column prop="content" label="公告内容" width=""></el-table-column>
         <el-table-column label="操作"  >
         <template slot-scope="scope">
             <el-button type="primary" size="small" @click="editNotice(scope.row)">修改</el-button>
@@ -50,8 +50,12 @@ export default {
 
 .notice-list {
     max-width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 20px;
 }
 
+/* Clov614修改样式 */
+el-table {
+    display: flex;
+}
 </style>

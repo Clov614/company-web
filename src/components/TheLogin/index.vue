@@ -49,14 +49,6 @@ export default {
           if (res.data.status == 200) { // 登录成功
             // 将token以及昵称写入session作用域
             console.log(res.data.data);
-
-
-
-
-
-
-
-
             sessionStorage.setItem("nick_name", res.data.data.name);
             sessionStorage.setItem("token",res.data.data.token);
             // 触发TheHead监听事件
@@ -64,12 +56,17 @@ export default {
             // 跳转后台路由
             this.$router.push('/manager').catch(err =>{err});
           } else if (res.data.status === 400) {
-          MessageBox.alert('用户名或密码错误', '提示', {
+          MessageBox.alert(res.data.msg, '提示', {
             confirmButtonText: '确定',
             type: 'error'
           });
         } else if (res.data.status === 401) {
-          MessageBox.alert('登录超时，请重新登录', '提示', {
+          MessageBox.alert(res.data.msg, '提示', {
+            confirmButtonText: '确定',
+            type: 'error'
+          });
+        } else if (res.data.status === 403) {
+          MessageBox.alert(res.data.msg, '提示', {
             confirmButtonText: '确定',
             type: 'error'
           });

@@ -64,6 +64,9 @@ git submodule update --init --recursive
 git submodule update
 ```
 
+```
+git submodule update --remote  #更新到最新版本
+```
 
 ## 如何贡献
 

@@ -90,6 +90,13 @@ export default {
     },
     watch: {
         
+    },
+    mounted() {
+        // 如未登录状态强制路由至login
+        const nick_name = sessionStorage.getItem("nick_name");
+        if (nick_name == null || nick_name == '尚未登录') {
+            this.$router.push('/login');
+        }
     }
 };
 </script>

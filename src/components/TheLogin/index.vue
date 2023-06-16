@@ -64,7 +64,7 @@ export default {
           MessageBox.alert(res.data.msg, '提示', {
             confirmButtonText: '确定',
             type: 'error'
-          });
+          }); // TODO 提示框点击叉叉后报错
         } else if (res.data.status === 403) {
           MessageBox.alert(res.data.msg, '提示', {
             confirmButtonText: '确定',

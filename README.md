@@ -33,15 +33,15 @@
 
 - [x] 前台新闻页面
 
+- [x] 友情链接
+
 ### TODO (计划中的)
 
-- [] 后台数据库交互
+- [ ] 后台数据库交互
 
-- [] 文章前台静态页面
+- [ ] 文章前台静态页面
 
-- [] 友情链接
-
-- [] 留言板
+- [ ] 留言板
 
 
 ## 如何贡献
@@ -79,11 +79,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## 神秘人入伙了
-
-## 神秘人2号入伙了
-
-## 神秘人3号入伙了
-
-## 01加入战斗
 

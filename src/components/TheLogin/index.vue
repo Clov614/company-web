@@ -17,7 +17,8 @@
 </template>
 
 <script>
-
+// 导入MessageBox
+import { MessageBox } from 'element-ui';
 
 // 导入request (axios)
 import request from '@/api/request.js';
@@ -48,13 +49,35 @@ export default {
           if (res.data.status == 200) { // 登录成功
             // 将token以及昵称写入session作用域
             console.log(res.data.data);
+
+
+
+
+
+
+
+
             sessionStorage.setItem("nick_name", res.data.data.name);
             sessionStorage.setItem("token",res.data.data.token);
             // 触发TheHead监听事件
             this.resetSetItem('watchStorage', res.data.data.name);
             // 跳转后台路由
             this.$router.push('/manager').catch(err =>{err});
-          }
+          } else if (res.data.status === 400) {
+          MessageBox.alert('用户名或密码错误', '提示', {
+            confirmButtonText: '确定',
+            type: 'error'
+          });
+        } else if (res.data.status === 401) {
+          MessageBox.alert('登录超时，请重新登录', '提示', {
+            confirmButtonText: '确定',
+            type: 'error'
+          });
+        } else {
+          MessageBox.alert('登录失败，请稍后再试', '提示', {
+            confirmButtonText: '确定',
+            type: 'error'
+          });}
           // TODO: 登录不成功情况弹提示框 （status ！= 200）分情况else if 判断
         })
         .catch(err => {

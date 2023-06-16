@@ -43,6 +43,27 @@
 
 - [ ] 留言板
 
+## 后端作为子仓库依赖引入
+
+后端采用SpringMVC开发REST API
+
+### [后端项目地址](https://github.com/Clov614/spring-serve)
+
+
+## 主仓库如何拉取子仓库
+
+### 第一次拉取应使用：
+
+```
+git submodule update --init --recursive 
+```
+
+### 如何同步子仓库：
+
+```
+git submodule update
+```
+
 
 ## 如何贡献
 

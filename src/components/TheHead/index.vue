@@ -10,18 +10,19 @@
   <div id="head">
     <div class="line"></div>
     <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
-        background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-        <el-menu-item index="1"><router-link to='/home'>首页</router-link></el-menu-item>
-        <el-menu-item index="2"><router-link to='/news'>新闻</router-link></el-menu-item>
-        <el-menu-item index="3"><a href="/home">重点关注</a></el-menu-item>
-        <el-menu-item index="5" style="float: right;" v-show="!triggerSign"><router-link to='/login'>登录</router-link></el-menu-item>
-        <el-menu-item index="7" style="float: right;" v-show="triggerSign" @click="SignOut">注销</el-menu-item>
-        <!-- 这边后台路由跳转改为编程式跳转 -->
-        <el-menu-item index="4" style="float: right;" @click="Go2ManagerClick">后台</el-menu-item>
-        <!-- 不懂侦听session只能搁置 -->
-        <!-- <el-menu-item index="6" style="float: right;">用户名: {{ nick_name }}</el-menu-item> -->
-        <el-menu-item index="6" style="float: right;">用户名: {{ nick_name }}</el-menu-item>
-        
+      background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+      <el-menu-item index="1"><router-link to='/home'>首页</router-link></el-menu-item>
+      <el-menu-item index="2"><router-link to='/news'>新闻</router-link></el-menu-item>
+      <el-menu-item index="3"><a href="/home">重点关注</a></el-menu-item>
+      <el-menu-item index="5" style="float: right;" v-show="!triggerSign"><router-link
+          to='/login'>登录</router-link></el-menu-item>
+      <el-menu-item index="7" style="float: right;" v-show="triggerSign" @click="SignOut">注销</el-menu-item>
+      <!-- 这边后台路由跳转改为编程式跳转 -->
+      <el-menu-item index="4" style="float: right;" @click="Go2ManagerClick">后台</el-menu-item>
+      <!-- 不懂侦听session只能搁置 -->
+      <!-- <el-menu-item index="6" style="float: right;">用户名: {{ nick_name }}</el-menu-item> -->
+      <el-menu-item index="6" style="float: right;">用户名: {{ nick_name }}</el-menu-item>
+
     </el-menu>
 
   </div>
@@ -38,17 +39,26 @@ export default {
       nick_name: '尚未登录',
       triggerSign: false,
     };
+
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    // init nick_name
+    initNick() {
+      const nick_name = sessionStorage.getItem("nick_name");
+      if (nick_name == null) {
+        this.$data.nick_name = '尚未登录';
+      }
+      this.$data.nick_name = nick_name;
     },
     // 注销 清空session
     SignOut() {
       // 清空session作用域
       sessionStorage.clear();
       // 返回登录页面
-      this.$router.push('/login').catch(err =>{err});
+      this.$router.push('/login').catch(err => { err });
       // 注销也需要切换按钮 后台与登录按钮切换
       this.triggerSign = false;
       this.nick_name = '尚未登录';
@@ -60,8 +70,8 @@ export default {
       const token = sessionStorage.getItem("token");
       if (nick_name != null && token != null) {
         // 跳转至后台页面
-        this.$router.push("/manager").catch(err =>{err});
-      }else { // 未登录不跳转弹出提示框
+        this.$router.push("/manager").catch(err => { err });
+      } else { // 未登录不跳转弹出提示框
         // TODO 提示框提醒未登录 （或者跳转登录页面）（或者提示用户未登录是否跳转登录页面）
       }
     },
@@ -104,12 +114,15 @@ export default {
     // },
   },
   mounted() {
+    // 初始化nick_name
+    this.initNick()
     // 创建监听钩子函数
-    window.addEventListener('setItem',this.RefreshNickName)
+    window.addEventListener('setItem', this.RefreshNickName)
   },
   beforeDestroy() {
-    window.removeEventListener('setItem',this.RefreshNickName)
-  }
+    window.removeEventListener('setItem', this.RefreshNickName)
+  },
+
 }
 </script>
 

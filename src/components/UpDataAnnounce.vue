@@ -58,6 +58,10 @@ export default {
                 }
             });
             console.log("更新公告成功", this.form);
+            
+            // TODO 增加确认alert提示框
+            // 跳转回公告列表
+            this.$router.push("/manager/AnnoList");
         },
     },
 };

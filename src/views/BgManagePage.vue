@@ -8,7 +8,7 @@
             <el-main style="display: flex;justify-content: flex-start;">
                 <el-row class="tac" style="position: static;width: 20%;" >
                     <el-col :span="22">
-                        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                        <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
                             <el-submenu index="1">
                                 <template slot="title">
                                     <i class="el-icon-location"></i>
@@ -55,7 +55,7 @@ export default {
     name: "BgManagePage",
     data() {
         return {
-            noticeChoices: ["公告列表","发布公告","修改公告"]
+            noticeChoices: ["公告列表","发布公告"]
         };
     },
     methods: {
@@ -90,6 +90,13 @@ export default {
     },
     watch: {
         
+    },
+    mounted() {
+        // 如未登录状态强制路由至login
+        const nick_name = sessionStorage.getItem("nick_name");
+        if (nick_name == null || nick_name == '尚未登录') {
+            this.$router.push('/login');
+        }
     }
 };
 </script>

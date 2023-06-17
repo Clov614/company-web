@@ -17,13 +17,17 @@
 </template>
 
 <script>
+// 导入request (axios)
+import request from '@/api/request.js';
+
 export default {
     name: 'AddAnnounce',
     data() {
         return {
             form: {
-                title: '',
-                content: ''
+                title: "",
+                content: "",
+                token: "" // 用户唯一凭证
             }
         };
     },
@@ -31,6 +35,27 @@ export default {
         addAnnouncement() {
             // 执行添加公告的逻辑，可以将 this.form 提交到后端或进行其他操作
             console.log('添加公告', this.form);
+            this.getToken(); // 获取token
+            this.postNotice();
+        },
+        // 提交后端添加一条公告请求
+        async postNotice() {
+            const response = await request.post("/notice/add",this.$data.form);
+            if (response.data.status == 200) {
+                // TODO 提示alert可用element-ui更加美观
+                alert("添加公告成功");
+                // 跳转回公告列表
+                this.$router.push("/manager/AnnoList");
+            } else {
+                alert("添加公告失败: "+response.data.msg);
+            }
+            console.log(response);
+            
+        },
+        // 在session中获取token
+        getToken() {
+            const token = sessionStorage.getItem("token");
+            this.$data.form.token = token;
         }
     }
 };

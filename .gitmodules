@@ -1,0 +1,3 @@
+[submodule "spring-serve"]
+	path = spring-serve
+	url = git@github.com:Clov614/spring-serve.git

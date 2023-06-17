@@ -33,16 +33,40 @@
 
 - [x] 前台新闻页面
 
+- [x] 友情链接
+
 ### TODO (计划中的)
 
-- [] 后台数据库交互
+- [ ] 后台数据库交互
 
-- [] 文章前台静态页面
+- [ ] 文章前台静态页面
 
-- [] 友情链接
+- [ ] 留言板
 
-- [] 留言板
+## 后端作为子仓库依赖引入
 
+后端采用SpringMVC开发REST API
+
+### [后端项目地址](https://github.com/Clov614/spring-serve)
+
+
+## 主仓库如何拉取子仓库
+
+### 第一次拉取应使用：
+
+```
+git submodule update --init --recursive 
+```
+
+### 如何同步子仓库：
+
+```
+git submodule update
+```
+
+```
+git submodule update --remote  #更新到最新版本
+```
 
 ## 如何贡献
 
@@ -79,11 +103,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## 神秘人入伙了
-
-## 神秘人2号入伙了
-
-## 神秘人3号入伙了
-
-## 01加入战斗
 

@@ -30,7 +30,7 @@ export default {
         username: '',
         password: ''
       },
-      // token 回调凭证
+      // token  回调凭证
       token: '',
       // 状态
       status: 0,
@@ -58,7 +58,12 @@ export default {
           } else if (res.data.status === 400) {
             MessageBox.alert(res.data.msg, '提示', {
               confirmButtonText: '确定',
-              type: 'error'
+              type: 'error',
+              callback: () => {
+                // 清空表单数据
+                this.sign_form.username = '';
+                this.sign_form.password = '';
+              }
             });
           } else if (res.data.status === 401) {
             MessageBox.alert(res.data.msg, '提示', {

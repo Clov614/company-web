@@ -40,12 +40,21 @@ export default {
         },
         deleteNotice(notice) {
             // 执行删除公告的逻辑，例如弹出确认框后发送请求删除公告
+            // TODO 弹出确认框后发送请求删除公告
             console.log('删除公告', notice);
+            this.delNotice(notice);
+            // 刷新一下页面
+            this.$router.go(0);
         },
         async getNoticeList() {
             const notice_list = (await request.get("/notice/getNoticeList")).data.data;
             this.notices = notice_list;
             console.log(notice_list);
+        },
+        // 删除公告请求
+        async delNotice(notice) {
+            const response = await request.post("/notice/delete",notice);
+            console.log(response);
         }
     },
     created() {

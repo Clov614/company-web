@@ -27,6 +27,9 @@ import NewsModule from '@/views/NewsModule.vue'
 import AnnoList from '@/components/AnnoList.vue'
 import TheLogin from '@/components/TheLogin'
 
+// 后台管理页面组件
+import InfoView from '@/components/ManagerComponent/InfoView'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -55,6 +58,11 @@ const routes = [
     component: BgManagePage,
     children: [
       {
+        path: "",
+        redirect: "InfoView",
+        component: InfoView,
+      },
+      {
         // 配置后台管理页面的子路由
         path: "addAnno",
         name: "AddAnnounce",
@@ -69,6 +77,11 @@ const routes = [
         path: "annoList",
         name: "AnnoList",
         component: AnnoList,
+      },
+      {
+        path: "InfoView",
+        name: "InfoView",
+        component: InfoView,
       },
     ],
   },

@@ -8,7 +8,7 @@
             <el-main style="display: flex;justify-content: flex-start;">
                 <el-row class="tac" style="position: static;width: 20%;" >
                     <el-col :span="22">
-                        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                        <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
                             <el-submenu index="1">
                                 <template slot="title">
                                     <i class="el-icon-location"></i>

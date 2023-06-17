@@ -17,14 +17,18 @@
 </template>
 
 <script>
+import request from '@/api/request';
+
 export default {
     name: 'UpDataAnnounce',
-    props: ["id","title","content","token"],
+    // props: ["id","title","content","token"],
     data() {
         return {
             form: {
+                id: "",
                 title: "",
                 content: "",
+                token: ""
             },
         };
     },
@@ -35,12 +39,25 @@ export default {
     methods: {
         fetchAnnouncement() {
             // 将公告信息填充到表单中
-            this.form.title = this.$router.param.title;
-            this.form.content = this.$router.param.content;
+            const title = this.$route.query.title;
+            const content = this.$route.query.content;
+            const id = this.$route.query.id;
+            const token = this.$route.query.token;
+            // data中的值更新
+            this.$data.form.title = title;
+            this.$data.form.content = content;
+            this.$data.form.id = id;
+            this.$data.form.token = token;
         },
-        updateAnnouncement() {
+        async updateAnnouncement() {
             // 执行更新公告的逻辑，可以将 this.form 提交到后端或进行其他操作
-            console.log("更新公告", this.form);
+            
+            await request.post('/notice/modify', this.form, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            console.log("更新公告成功", this.form);
         },
     },
 };

@@ -36,7 +36,7 @@ export default {
                 id: notice.id,
                 token: notice.token
             }
-            this.$router.push({path: '/manager/updataAnno', params: params });
+            this.$router.push({path: '/manager/updataAnno', query: params });
         },
         deleteNotice(notice) {
             // 执行删除公告的逻辑，例如弹出确认框后发送请求删除公告

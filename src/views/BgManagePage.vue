@@ -55,7 +55,7 @@ export default {
     name: "BgManagePage",
     data() {
         return {
-            noticeChoices: ["公告列表","发布公告","修改公告"]
+            noticeChoices: ["公告列表","发布公告"]
         };
     },
     methods: {

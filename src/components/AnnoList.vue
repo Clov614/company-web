@@ -30,6 +30,13 @@ export default {
         editNotice(notice) {
             // 执行编辑公告的逻辑，例如跳转到编辑页面
             console.log('编辑公告', notice);
+            const params = {
+                title: notice.title,
+                content: notice.content,
+                id: notice.id,
+                token: notice.token
+            }
+            this.$router.push({path: '/manager/updataAnno', params: params });
         },
         deleteNotice(notice) {
             // 执行删除公告的逻辑，例如弹出确认框后发送请求删除公告

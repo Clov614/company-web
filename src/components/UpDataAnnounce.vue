@@ -19,6 +19,7 @@
 <script>
 export default {
     name: 'UpDataAnnounce',
+    props: ["id","title","content","token"],
     data() {
         return {
             form: {
@@ -27,21 +28,15 @@ export default {
             },
         };
     },
-    created() {
+    created() { // TODO 这边bug
         // 在页面加载时，可以从后端获取公告信息，并将其填充到表单中
         this.fetchAnnouncement();
     },
     methods: {
         fetchAnnouncement() {
-            // 从后端获取公告信息的逻辑
-            // 假设获取到的公告信息为announcementData
-            const announcementData = {
-                title: "",
-                content: "",
-            };
             // 将公告信息填充到表单中
-            this.form.title = announcementData.title;
-            this.form.content = announcementData.content;
+            this.form.title = this.$router.param.title;
+            this.form.content = this.$router.param.content;
         },
         updateAnnouncement() {
             // 执行更新公告的逻辑，可以将 this.form 提交到后端或进行其他操作

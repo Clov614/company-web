@@ -1,84 +1,29 @@
 <template>
     <div id="home">
-        <el-container>
-            <el-button type="text" @click="open">点击查看最新公告</el-button>
-            <el-container>
-                <div class="cebian">
-                    <el-steps direction="vertical" :active="2">
-                        <el-step title="第一步" description="公司第一阶段战略"></el-step>
-                        <el-step title="第二步" description="公司第二阶段战略"></el-step>
-                        <el-step title="第三步" description="关注鬼头明里喵关注鬼头明里谢谢喵"></el-step>
-                        <el-step title="第四步" description="关注鬼头明里喵关注鬼头明里谢谢喵"></el-step>
-                    </el-steps>
+        <div class="mid">
+            <div class="side">
+                <TheSide/>
+            </div>
+            <div class="main">
+                <the-main></the-main>
+                <div class="lists">
+                    <the-lists></the-lists>
                 </div>
-                <el-container>
-                    <el-main>
-                        <div class="main">
-                            <div class="lunbo">
-                                <template>
-                                    <el-carousel :interval="5000" arrow="always">
-                                        <el-carousel-item v-for="item in 4" :key="item">
-                                            <h3>{{ item }}</h3>
-                                        </el-carousel-item>
-                                    </el-carousel>
-                                </template>
-                            </div>
-                            <div class="hinfo" style="margin-top: -110px;">
-                                <h2>文章列表</h2>
-                            </div>
-                            <div class="info" style="margin-top: -80px;">
-                                <!-- <el-descriptions>
-                                    <el-descriptions-item label="ctmer">桐生战狼</el-descriptions-item>
-                                    <el-descriptions-item label="id">1145141919810</el-descriptions-item>
-                                    <el-descriptions-item label="address">下北泽</el-descriptions-item>
-                                    <el-descriptions-item label="备注">
-                                        <el-tag size="small">A级通缉令</el-tag>
-                                    </el-descriptions-item>
-                                    <el-descriptions-item label="">下北泽114号</el-descriptions-item>
-                                </el-descriptions> -->
-                                <!-- <el-table :data="tableData" style="width: 100%" height="350">
-                                    <el-table-column fixed prop="date" label="日期" width="150" height="50">
-                                    </el-table-column>
-                                    <el-table-column prop="name" label="姓名" width="120" height="50">
-                                    </el-table-column>
-                                    <el-table-column prop="province" label="省份" width="120" height="50">
-                                    </el-table-column>
-                                    <el-table-column prop="city" label="市区" width="120" height="50">
-                                    </el-table-column>
-                                    <el-table-column prop="address" label="地址" width="300" height="50">
-                                    </el-table-column>
-                                    <el-table-column prop="zip" label="邮编" width="120" height="50">
-                                    </el-table-column>
-                                </el-table> -->
-
-
-                                <el-table :data="tableData" style="width: 100%">
-                                    <el-table-column label="标题" prop="title"></el-table-column>
-                                    <el-table-column label="内容" prop="content"></el-table-column>
-                                    <el-table-column label="Token" prop="token" show-overflow-tooltip></el-table-column>
-                                </el-table>
-                            </div>
-                        </div>
-                    </el-main>
-                </el-container>
-                <template>
-                    Drop anything you want here senpai
-                    kokosuki
-
-                </template>
-            </el-container>
-
-
-            <el-footer>
-                <div class="fter">
-                    <p>COPY RIGHT @神秘人敢死队</p>
-                </div>
-            </el-footer>
-        </el-container>
+            </div>
+        </div>
+        <div class="footer">
+            <the-footer></the-footer>
+        </div>
     </div>
 </template>
 
 <script>
+
+import TheSide from '@/components/TheSide/index.vue'
+import TheMain from '@/components/TheMain/index.vue'
+import TheLists from '@/components/TheLists/index.vue'
+import TheFooter from '@/components/TheFooter/index.vue'
+
 export default {
     name: 'TheHome',
     data() {
@@ -87,7 +32,12 @@ export default {
             tableData: []
         }
     },
-    components: {},
+    components: {
+        TheMain,
+        TheLists,
+        TheSide,
+        TheFooter
+    },
     methods: {
 
         open() {
@@ -102,11 +52,11 @@ export default {
             });
         },
         //数据表示例数据
-    //     this.tableData = [
-    //   { title: "标题1", content: "内容1", token: "sha-token-1" },
-    //   { title: "标题2", content: "内容2", token: "sha-token-2" },
-    //   { title: "标题3", content: "内容3", token: "sha-token-3" },
-    // ],
+        //     this.tableData = [
+        //   { title: "标题1", content: "内容1", token: "sha-token-1" },
+        //   { title: "标题2", content: "内容2", token: "sha-token-2" },
+        //   { title: "标题3", content: "内容3", token: "sha-token-3" },
+        // ],
     }
 }
 </script>
@@ -182,5 +132,19 @@ body>.el-container {
 
 .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
+}
+
+
+.side {
+    width: 500px;
+}
+
+.lists {
+    margin-left: 240px;
+}
+
+.footer {
+    margin-top: 150px;
+    margin-left: 560px;
 }
 </style>

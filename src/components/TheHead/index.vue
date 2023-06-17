@@ -116,6 +116,8 @@ export default {
   mounted() {
     // 初始化nick_name
     this.initNick()
+    // 后台与登录按钮切换判断
+    this.TriggerChange()
     // 创建监听钩子函数
     window.addEventListener('setItem', this.RefreshNickName)
   },

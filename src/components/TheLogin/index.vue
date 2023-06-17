@@ -50,31 +50,47 @@ export default {
             // 将token以及昵称写入session作用域
             console.log(res.data.data);
             sessionStorage.setItem("nick_name", res.data.data.name);
-            sessionStorage.setItem("token",res.data.data.token);
+            sessionStorage.setItem("token", res.data.data.token);
             // 触发TheHead监听事件
             this.resetSetItem('watchStorage', res.data.data.name);
             // 跳转后台路由
-            this.$router.push('/manager').catch(err =>{err});
+            this.$router.push('/manager').catch(err => { err });
           } else if (res.data.status === 400) {
-          MessageBox.alert(res.data.msg, '提示', {
-            confirmButtonText: '确定',
-            type: 'error'
-          });
-        } else if (res.data.status === 401) {
-          MessageBox.alert(res.data.msg, '提示', {
-            confirmButtonText: '确定',
-            type: 'error'
-          }); // TODO 提示框点击叉叉后报错
-        } else if (res.data.status === 403) {
-          MessageBox.alert(res.data.msg, '提示', {
-            confirmButtonText: '确定',
-            type: 'error'
-          });
-        } else {
-          MessageBox.alert('登录失败，请稍后再试', '提示', {
-            confirmButtonText: '确定',
-            type: 'error'
-          });}
+            MessageBox.alert(res.data.msg, '提示', {
+              confirmButtonText: '确定',
+              type: 'error'
+            });
+          } else if (res.data.status === 401) {
+            MessageBox.alert(res.data.msg, '提示', {
+              confirmButtonText: '确定',
+              type: 'error',
+              callback: () => {
+                // 清空表单数据
+                this.sign_form.username = '';
+                this.sign_form.password = '';
+              }
+            });
+          } else if (res.data.status === 403) {
+            MessageBox.alert(res.data.msg, '提示', {
+              confirmButtonText: '确定',
+              type: 'error',
+              callback: () => {
+                // 清空表单数据
+                this.sign_form.username = '';
+                this.sign_form.password = '';
+              }
+            });
+          } else {
+            MessageBox.alert('登录失败，请稍后再试', '提示', {
+              confirmButtonText: '确定',
+              type: 'error',
+              callback: () => {
+                // 清空表单数据
+                this.sign_form.username = '';
+                this.sign_form.password = '';
+              }
+            });
+          }
           // TODO: 登录不成功情况弹提示框 （status ！= 200）分情况else if 判断
         })
         .catch(err => {
@@ -99,13 +115,13 @@ export default {
 }
 </script>
 <style scoped> .login-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ }
 
-#the-login-h1 {
-  margin-top: 10%;
-}
+ #the-login-h1 {
+   margin-top: 10%;
+ }
 </style>

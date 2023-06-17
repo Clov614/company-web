@@ -1,6 +1,5 @@
 <template>
   <el-table :data="tableData" style="width: 100%">
-    <el-table-column label="ID" prop="id"></el-table-column>
     <el-table-column label="标题" prop="title"></el-table-column>
     <el-table-column label="内容" prop="content"></el-table-column>
   </el-table>
